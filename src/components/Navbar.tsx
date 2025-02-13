@@ -72,7 +72,7 @@ const Navbar = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-gray-900 text-white space-y-4 p-4">
           <ul className="space-y-4">
-            {['Home', 'About', 'Houses', 'Rent', 'Contact'].map((item, index) => (
+            {['Home', 'About', 'Sales', 'Rent', 'Contact'].map((item, index) => (
               <li key={index}>
                 <Link href={item === 'Home' ? '/' : `/${item.toLowerCase().replace(/ /g, '')}`}
                    className="block text-center py-2 rounded-md hover:bg-primary transition">
