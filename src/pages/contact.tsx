@@ -10,7 +10,7 @@ const ContactUsPage = () => {
     { 
       type: 'Location', 
       value: 'Bole Road, Addis Ababa, Ethiopia', 
-      link: 'https://maps.app.goo.gl/944EC9ucTVy3r4n87' 
+      link: 'https://maps.app.goo.gl/AQFzW1fSmXxbKExy8' 
     },
     { 
       type: 'WhatsApp', 
