@@ -1,12 +1,23 @@
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import React from 'react';
-import { FaFacebook, FaInstagram, FaTiktok, FaYoutube, FaWhatsapp } from 'react-icons/fa';
+import { 
+  FaFacebook, FaInstagram, FaTiktok, FaYoutube, FaWhatsapp, FaViber, FaTelegram 
+} from 'react-icons/fa';
+import { MdMessage } from 'react-icons/md'; // Botim placeholder icon
 
 const ContactUsPage = () => {
   const contactInfo = [
-    { type: 'Phone', value: '1. 0977809831 \n2. 0911249802 \n3. +1(713) 855-5892' },
-    { type: 'Email', value: 'maldifrealstate@gmail.com', link: 'mailto:maldifrealstate@gmail.com' },
+    { 
+      type: 'Phone', 
+      value: '1. 0977809831 \n2. 0911249802 \n3. +1(713) 855-5892' 
+    },
+    { 
+      type: 'Email', 
+      value: 'maldifrealstate@gmail.com', 
+      icon: <MdMessage className="inline text-gray-400" />, 
+      link: 'mailto:maldifrealstate@gmail.com' 
+    },
     { 
       type: 'Location', 
       value: 'Bole Road, Addis Ababa, Ethiopia', 
@@ -19,17 +30,39 @@ const ContactUsPage = () => {
       link: 'https://wa.me/17138555892' 
     },
     { 
+      type: 'Viber', 
+      value: '+251977809831', 
+      icon: <FaViber className="inline text-purple-500" />, 
+      link: 'viber://chat?number=%2B251977809831' 
+    },
+    { 
+      type: 'Botim', 
+      value: '+251911249802', 
+      icon: <MdMessage className="inline text-blue-400" />, 
+      link: 'https://botim.me/' 
+    },
+    { 
+      type: 'Telegram', 
+      value: 't.me/maldifrealestate', 
+      icon: <FaTelegram className="inline text-sky-500" />, 
+      link: 'https://t.me/maldifrealestate' 
+    },
+    { 
       type: 'Other Locations', 
       value: '1. Bole Ruanda, Addis Abeba\n2. Bole Bulbula, Addis Abeba\n3. CMC, Addis Abeba\n4. Lafto, Addis Abeba' 
     },
   ];
 
-    const socialMediaLinks = [
-      { icon: <FaFacebook />, href: 'https://www.facebook.com/profile.php?id=61568774526965&mibextid=ZbWKwL', color: 'text-blue-600' },
-      { icon: <FaInstagram />, href: 'https://www.instagram.com/maldifrealstate/', color: 'text-pink-500' },
-      { icon: <FaTiktok />, href: 'https://https://www.tiktok.com/@maldifrealstate?_r=1&_d=e93jfcfhkjhgmk&sec_uid=MS4wLjABAAAAFvsDnFtAlpHAReww08gkXCV75BFoMZoqItyJqJ4QwTQ8LGlX6o_y0y2buHDlOiPI&share_author_id=7334596929067992069&sharer_language=en&source=h5_m&u_code=ecfji8kmfkh18m&timestamp=1734958600&user_id=7334596929067992069&sec_user_id=MS4wLjABAAAAFvsDnFtAlpHAReww08gkXCV75BFoMZoqItyJqJ4QwTQ8LGlX6o_y0y2buHDlOiPI&utm_source=telegram&utm_campaign=client_share&utm_medium=android&share_iid=7451042732200134405&share_link_id=5fa77166-5175-42f5-99dc-f4bc53c8bd93&share_app_id=1233&ugbiz_name=ACCOUNT&social_share_type=5&enable_checksum=1', color: 'text-black' },
-      { icon: <FaYoutube />, href: 'https://www.youtube.com/@maldifrealstate', color: 'text-red-600' },
-    ];
+  const socialMediaLinks = [
+    { icon: <FaFacebook />, href: 'https://www.facebook.com/profile.php?id=61568774526965&mibextid=ZbWKwL', color: 'text-blue-600' },
+    { icon: <FaInstagram />, href: 'https://www.instagram.com/maldifrealstate/', color: 'text-pink-500' },
+    { icon: <FaTiktok />, href: 'https://www.tiktok.com/@maldifrealstate', color: 'text-black' },
+    { icon: <FaYoutube />, href: 'https://www.youtube.com/@maldifrealstate', color: 'text-red-600' },
+    { icon: <FaWhatsapp />, href: 'https://wa.me/17138555892', color: 'text-green-500' },
+    { icon: <FaViber />, href: 'viber://chat?number=%2B251977809831', color: 'text-purple-500' },
+    { icon: <MdMessage />, href: 'https://botim.me/', color: 'text-blue-400' },
+    { icon: <FaTelegram />, href: 'https://t.me/maldifrealestate', color: 'text-sky-500' }
+  ];
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
@@ -41,6 +74,7 @@ const ContactUsPage = () => {
       {/* Main Content */}
       <main className="flex-grow">
         <div className="container mx-auto py-16">
+          
           {/* Contact Information Section */}
           <section className="text-center mb-16">
             <h2 className="text-4xl font-extrabold text-gray-800 mb-8">Contact Us</h2>
@@ -58,10 +92,14 @@ const ContactUsPage = () => {
                       rel="noopener noreferrer" 
                       className="text-lg underline hover:text-yellow-300 transition"
                     >
-                      {info.icon} {info.value}
+                      {info.icon && <span className="mr-2">{info.icon}</span>}
+                      {info.value}
                     </a>
                   ) : (
-                    <p className="text-lg whitespace-pre-wrap">{info.value}</p>
+                    <p className="text-lg whitespace-pre-wrap">
+                      {info.icon && <span className="mr-2">{info.icon}</span>}
+                      {info.value}
+                    </p>
                   )}
                 </div>
               ))}
