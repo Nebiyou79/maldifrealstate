@@ -10,7 +10,7 @@ const ContactUsPage = () => {
   const contactInfo = [
     { 
       type: 'Phone', 
-      value: '1. 0977809831 \n2. 0911249802 \n3. +1(713) 855-5892' 
+      value: '1. 0977809831 \n2. 0911205493 \n3. +1(713) 855-5892' 
     },
     { 
       type: 'Email', 
@@ -37,15 +37,15 @@ const ContactUsPage = () => {
     },
     { 
       type: 'Botim', 
-      value: '+251911249802', 
+      value: '+251977809831', 
       icon: <MdMessage className="inline text-blue-400" />, 
       link: 'https://botim.me/' 
     },
     { 
       type: 'Telegram', 
-      value: 't.me/maldifrealestate', 
+      value: 't.me/nebaman9', 
       icon: <FaTelegram className="inline text-sky-500" />, 
-      link: 'https://t.me/maldifrealestate' 
+      link: 'https://t.me/nebaman9' 
     },
     { 
       type: 'Other Locations', 
